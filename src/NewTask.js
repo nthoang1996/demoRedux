@@ -36,6 +36,7 @@ class NewTask extends React.Component {
 	}
 
 	handleKeyPress(event){
+		console.log(event.key);
 		if(event.key === 'Enter'){
 			this.submit();
 		}

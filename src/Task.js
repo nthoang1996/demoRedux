@@ -28,6 +28,14 @@ class Task extends React.Component {
 			return { query: nextProps.query.toLocaleLowerCase(),
 			tasks: queryTask};
 		}
+		else if(nextProps.tasks !== prevState.tasks){
+			const queryTask = nextProps.tasks.filter(
+				t => t.name.toLocaleLowerCase().includes(prevState.query.toLocaleLowerCase())
+			);
+			return { 
+				tasks: queryTask,
+			};
+		}
 		else return null;
 	}
 
